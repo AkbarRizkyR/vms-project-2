@@ -1,52 +1,42 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-// Import your component files
-import PortalLayout from '@/layouts/PortalLayout.vue';
-import HomePortal from '@/components/portal/HomePortal.vue';
-import About from '@/components/portal/AboutPortal.vue';
-import Faq from '@/components/portal/FaqPortal.vue';
-import Registration from '@/components/portal/RegisterPortal.vue';
-import Login from '@/components/portal/LoginPortal.vue';
-import FormRegister from '@/components/portal/FormRegistrasiPortal.vue'
-
 const routes = [
   {
     path: '/portal',
-    component: PortalLayout,
+    component: () => import('@/layouts/PortalLayout.vue'),
     children: [
       {
         path: 'home',
         name: 'HomePortal',
-        component: HomePortal,
+        component: () => import('@/components/portal/HomePortal.vue'),
       },
       {
         path: 'about',
         name: 'About',
-        component: About,
+        component: () => import('@/components/portal/AboutPortal.vue'),
       },
       {
         path: 'faq',
         name: 'Faq',
-        component: Faq,
+        component: () => import('@/components/portal/FaqPortal.vue'),
       },
       {
         path: 'register',
         name: 'Registration',
-        component: Registration,
+        component: () => import('@/components/portal/RegisterPortal.vue'),
       },
       {
         path: 'login',
         name: 'Login',
-        component: Login,
+        component: () => import('@/components/portal/LoginPortal.vue'),
       },
       {
         path: 'form_register',
         name: 'FormRegister',
-        component: FormRegister,
+        component: () => import('@/components/portal/FormRegistrasiPortal.vue'),
       },
     ],
   },
-  
 ];
 
 const router = createRouter({
