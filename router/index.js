@@ -37,6 +37,12 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/dashboard',
+    component: () => import('@/layouts/DashboardLayout.vue'),
+    name: 'Dashboard',
+  },
+  
 ];
 
 const router = createRouter({
