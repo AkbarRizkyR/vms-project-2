@@ -11,7 +11,7 @@
 
 <script>
 import Header from '../components/body/Header2.vue';
-import Footer from '../components/body/Footer.vue';
+import Footer from '../components/body/Footer2.vue';
 import Menu from '../components/body/MenuDash.vue';
 
     export default {
